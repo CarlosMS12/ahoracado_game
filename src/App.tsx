@@ -5,7 +5,7 @@ import { getRandomWord } from './helpers/getRandomWord';
 import './App.css';
 
 function App() {
-	const [word] = useState(getRandomWord());
+	const [word, setWord] = useState(getRandomWord());
 	const [hiddenWord, setHiddenWord] = useState('_ '.repeat(word.length));
 	const [attempts, setAttempts] = useState(0);
 	const [lose, setLose] = useState(false);
@@ -46,7 +46,17 @@ function App() {
 		setHiddenWord(hiddenWordArray.join(' '));
 
 		
-	};
+	}
+
+	const newGame = () => {
+		const newWord = getRandomWord();
+		setWord(newWord)
+		setHiddenWord('_ '.repeat(newWord.length));
+		setLose(false);
+		setWon(false);
+		setAttempts(0);
+	}
+
 	return (
 		<div className="App">
 			{/* Imégenes */}
@@ -71,6 +81,8 @@ function App() {
 					{letter}
 				</button>
 			))}
+			<br /> <br />
+			<button onClick={newGame}>¿New Game?</button>
 		</div>
 	);
 }
