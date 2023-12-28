@@ -3,11 +3,11 @@ let words: string[] = [
 	'PROGRAMA',
 	'PROGRAMADOR',
 	'MONITOR',
-	'COMPUTACIÓN',
+	'COMPUTACION',
 	'INFORMATICA',
 	'REDES',
 	'SISTEMAS',
-	'PROGRAMACIÓN',
+	'PROGRAMACION',
 ];
 
 export function getRandomWord() {

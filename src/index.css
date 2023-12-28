@@ -5,12 +5,35 @@
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
-
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	background-color: rgb(0, 0, 0);
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	height: 100vh;
+	width: 100vw;
+	div {
+		width: 100%;
+		margin: 10px;
+		padding: 20px;
+		.hidden {
+			font-size: xx-large;
+		}
+		picture {
+			img {
+				width: 300px;
+			}
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.buttons {
+		padding: 50px;
+		width: 100%;
+	}
 }
 
 button {
@@ -19,15 +42,107 @@ button {
 	width: 70px;
 	height: 50px;
 	border-style: none;
-  
+}
+button.new {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.5rem;
+	background-color: rgba(231, 231, 231, 0.2);
+	width: auto;
 }
 
+button.new:hover {
+	cursor: pointer;
+	background-color: rgb(0, 0, 0, 0.3);
+}
 button:hover {
 	cursor: pointer;
 	background-color: rgb(0, 0, 0, 0.3);
-	
+	border: 2px solid rgb(255, 255, 255);
 }
 
 button:active {
-  background-color: rgb(0, 0, 0, 1);
+	background-color: rgb(0, 0, 0, 1);
+	border: 2px solid rgb(0, 0, 0);
+}
+
+/* Media query para pantallas medianas (ej. tabletas) */
+
+@media screen and (min-width: 612px) and (max-width: 860px) {
+	.container {
+		div {
+			.hidden {
+				font-size: xx-large;
+			}
+			picture {
+				img {
+					width: 200px;
+				}
+			}
+			img {
+				width: 350px;
+			}
+		}
+		.buttons {
+			width: 900px;
+			padding: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 612px) {
+	.container {
+		flex-direction: column;
+		height: auto;
+		width: auto;
+		padding: 0;
+
+		div {
+			margin: 0;
+			padding: 0;
+			width: auto;
+			.hidden {
+				font-size: xx-large;
+			}
+			picture {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					width: 200px;
+					display: flex;
+					margin-top: 20%;
+				}
+			}
+			.hang {
+				position: absolute;
+				top: 5%; /* Posiciona la parte superior de la imagen en el 50% de la altura del contenedor padre */
+				left: 50%; /* Posiciona el lado izquierdo de la imagen en el 50% del ancho del contenedor padre */
+				transform: translate(
+					-50%,
+					-50%
+				); /* Centra la imagen completamente, ajustando su posición en relación con su propio tamaño */
+				width: 200px;
+			}
+			.hidden {
+				font-size: small;
+				margin: 0;
+			}
+		}
+		.buttons {
+			padding: 0;
+		}
+	}
+	button {
+		width: 50px;
+		height: 50px;
+	}
+	h2 {
+		font-size: 20px;
+		margin: 0;
+	}
+	h3 {
+		font-size: 15px;
+		margin: 0;
+	}
 }

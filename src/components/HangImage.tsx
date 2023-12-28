@@ -8,7 +8,7 @@ import image6 from '../assets/6.png';
 import image7 from '../assets/7.png';
 import image8 from '../assets/8.png';
 import image9 from '../assets/9.png';
-
+import '../index.css';
 const images: string[] = [
 	image0,
 	image1,
@@ -36,7 +36,8 @@ export function HangImage({imageNumber}: Props) {
         <img 
             src={images[imageNumber]} 
             alt="Hang image" 
-            style={{width: '250px'}} 
+			
+             
         />
     ); // JSX Element
 }
