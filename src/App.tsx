@@ -58,7 +58,7 @@ function App() {
 		<div className="App container">
 			<div>
 				{/* Imégenes */}
-				<picture className='hang-image'>
+				<picture className="hang-image">
 					<HangImage imageNumber={attempts} />
 				</picture>
 				{/* Palabra oculta */}
@@ -76,8 +76,12 @@ function App() {
 				{/* Mensaje de victoria */}
 				{won ? <h2>Felicidades, Ganaste</h2> : ''}
 			</div>
-			<div className='buttons'>
-				<img className='hang' src="../src/assets/hangman.png" alt="hangman" />
+			<div className="buttons">
+				<img
+					className="hang"
+					src="https://hang-man.ie/wp-content/uploads/2021/06/hm-new-logo_white.png"
+					alt="hangman"
+				/>
 				{/* Botones de letras */}
 				{letters.map((letter) => (
 					<button onClick={() => checkLetter(letter)} key={letter}>
